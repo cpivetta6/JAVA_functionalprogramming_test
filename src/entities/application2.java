@@ -5,8 +5,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+
+import entities.services.ProductService;
 
 public class application2 {
 
@@ -29,9 +33,6 @@ public class application2 {
 			
 			Map<Client, Product> list = new HashMap<Client, Product>();
 			
-			for(Client c : clients) {
-				
-			}
 			
 			int i = 0;
 			while(i < clients.size()) {
@@ -43,7 +44,18 @@ public class application2 {
 															", Product: " + value.getName() + ": " + value.getPrice()));
 			
 			
+			ProductService ps = new ProductService();
 			
+			double total = ps.filteredSum(products, p -> p.getPrice() > 0);
+			System.out.println("total sales: " + total);
+			
+			
+			//works only if a String, Integer...
+			/* Map<Client, Product> sortedList = list.entrySet().stream()
+						   .sorted(Map.Entry.comparingByValue())
+						   .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+						   (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+			*/
 			
 		}catch (IOException e) {
 			System.out.println("Error"+ e.getStackTrace());
