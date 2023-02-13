@@ -1,0 +1,145 @@
+package fpcodes;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Predicate;
+
+public class application3 {
+/*
+	private static Predicate<String> isPalindrome() {
+	    return word -> {
+	      int length = word.length();
+	      for (int i = 0; i < length / 2; i++) {
+	        if (word.charAt(i) != word.charAt(length - i - 1)) {
+	          return false;
+	        }
+	      }
+	      return true;
+	    };
+	  }*/
+	/*
+	private static Predicate<Integer> isPrime(){
+		return n -> {
+			for(int i = 2; i < n; i++) {
+				if(n % i == 0) {
+					return false;
+				}
+			}
+			return true;
+		};
+	}*/
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//RETURN A LARGEST NUMBER PRIME IN A INTEGER LIST
+		//THE SAME METHOD, CREATING A PREDICATE TO CONTROL EACH ELEMENT E FILTER THE ELEMENTS
+		/*
+		List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13);
+		Optional<Integer> prime = list.stream().filter(isPrime()).max(Comparator.naturalOrder());
+		if(prime.isPresent()) {
+			System.out.println(prime.get());
+		}
+		*/
+		//Integer prime = list.stream().filter(isPrime()).
+		
+		
+		//RETURN A LIST OF A PALINDROMES WORDS.. CREATED A PREDICATE IF ISPALINDROME TO FILTER AND CONTROL EACH CHARACTER
+		/*
+		List<String> words = Arrays.asList("List", "ABBA", "AVA", "CALA");
+		List<String> palindromeWords = words.stream()
+		        							.filter(isPalindrome())
+		        							.collect(Collectors.toList());
+		
+		System.out.println(palindromeWords);
+		*/
+		  
+		
+		
+			
+				
+		//RETURN AVERAGE OF ALL NUMBERS IN THE LIST
+		/*
+		List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8,9);
+		Integer avg = list.stream().reduce(0, (x,y) -> (x+y)) / list.size();
+		System.out.println(avg);
+		*/
+		
+		
+		
+		//RETURN A LIST THAT STRING LENGHT IS <= 4
+		/*
+		List<String> list = Arrays.asList("Ana", "Caio", "Blaze", "Bruce");
+		List<String> newList = list.stream().filter(p -> p.length() <= 4).collect(Collectors.toList());
+		
+		newList.forEach(System.out::println);
+		*/
+		
+		//RETURN A PRODUCT OF THE EVEN NUMBERS USING REDUCE
+		/*
+		List<Integer> list =  Arrays.asList(1,2,3);
+		Integer sum = list.stream().filter(p -> p%2 != 0).reduce(1, (x,y) -> x*y);
+		System.out.println(sum);
+		*/
+		
+		//RETURN A LIST OF COUNTRIES THAT RETURNS ALL THAT STARTS WITH 'A'
+		/*
+		List<String> list = Arrays.asList("Austria", "italy", "Germany", "France", "Australia");
+		List<String> names = list.stream().map(p -> p.toUpperCase()).filter(p -> p.charAt(0) == 'A').collect(Collectors.toList());
+		names.forEach(System.out::println);
+		*/
+		
+		
+		//RETURN A SECOND LARGEST NUMBER .sorted(a,b) -> b-a (unsorted algorithim)
+		/*
+		List<Integer> list = Arrays.asList(1,2,3,7,5);
+		Optional<Integer> maxNumber = list.stream().sorted((a,b) -> b-a).skip(1).findFirst();
+		if(maxNumber.isPresent()) {
+			System.out.println(maxNumber.get());
+		}
+		*/
+		
+		
+		//RETURN A MAX NUMBER IN A LIST --------------------------------------------
+		/*
+		List<Integer> list = Arrays.asList(1,2,3,7,5);
+		Optional<Integer> maxNumber = list.stream().max(Comparator.naturalOrder());
+		if(maxNumber.isPresent()) {
+			System.out.println(maxNumber.get());
+		}
+		*/
+		
+		//RETURN A MOST FREQUENT STRING IN A LIST ---------------------------------------------
+		/*
+		List<String> list = Arrays.asList("Triangle", "Circle", "Circle", "blue");
+		Map<String, Long> wordFrequency = list.stream()
+											.collect(Collectors.groupingBy(word -> word, Collectors.counting()));
+		
+		String mostFrequently = wordFrequency.entrySet().stream()
+														.max(Map.Entry.comparingByValue())
+														.map(Map.Entry::getKey)
+														.orElse(null);
+		System.out.println(mostFrequently);
+		
+		*/
+		
+		
+		//RETURN A STRING LIST LENGHT < 5 --------------------------------------------
+		/*
+		List<String> list = Arrays.asList("Triangle", "Circle", "Red", "blue");
+		List<String> newList = list.stream().filter(p -> p.length() < 5).collect(Collectors.toList());
+		newList.forEach(System.out::println);*/
+		
+		
+		
+		//Return sum of the squares of a list --------------------------------------------
+		/*
+		List<Integer> list = Arrays.asList(1,2,3,4);
+		Integer sum = list.stream().map(p -> p*p).reduce(0, (x,y)-> x+y);
+		System.out.println("sum: " + sum);*/
+		
+	}
+
+}
